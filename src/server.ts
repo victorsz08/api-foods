@@ -3,7 +3,7 @@ import routes from "./routes/routes";
 import "dotenv/config";
 import cors from "cors"
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT ? Number(process.env.PORT) : 3333;
 
 const app = express();
 
@@ -21,5 +21,5 @@ app.get("/", (req, res) => {
 
 
 app.listen(port, () => {
-    console.log("server running");
+    console.log("server running in port: " + port);
 });
